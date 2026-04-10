@@ -165,7 +165,9 @@ export function Standings() {
                     }
                     
                     const isCompleted = event.state === 'completed';
-                    
+
+                    if (!event.match?.teams) continue;
+
                     for (const team of event.match.teams) {
                         if (!leagueStandings[leagueSlug][team.code]) {
                             leagueStandings[leagueSlug][team.code] = {
