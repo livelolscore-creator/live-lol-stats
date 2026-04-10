@@ -1,24 +1,44 @@
-# 📊 Live LoL Esports - Forked from [Aureom](https://github.com/Aureom/live-lol-esports)
+# 🏆 LiveLoLScore
 
-# 🔑 Key Differences
-* Translated to English 🤠
-* Defaults to dark theme & sound muted 😎
-* Shows patch version with link to patch notes 🤓
-* Shows series information such as "Best of 5" and "European Semi-Finals" 🏆
-* Shows in-game timer & stream delay (approximate) ⏲
-* Show game start times and upcoming games 📅
-* Item Stats ⚔
-* More to come 👀
-  * Player stats & damage?
-  * Current betting odds from top betting sites?
-  * Historical matches?
-  * Spoiler free mode?
+Live League of Legends esports tracker - track live matches, standings, schedules, results, and gaming gear reviews.
 
+![TypeScript](https://img.shields.io/badge/TypeScript-76.0%25-blue)
+![CSS](https://img.shields.io/badge/CSS-21.3%25-purple)
+![React](https://img.shields.io/badge/React-Ready-green)
 
-## 📦 Dependencies and programs used
+## ✨ Features
 
-| Name                                             | Use in project                                               |
-| ------------------------------------------------ | ------------------------------------------------------------ |
-| [Visual Studio Code](https://code.visualstudio.com/)        | IDE |
-| [React](https://reactjs.org/) | FrameWork |
-| [Unofficial Lolesports API](https://github.com/vickz84259/lolesports-api-docs) | Requesting live data [vickz84259](https://github.com/vickz84259) |
+- **Live Match Tracking** - Real-time LoL esports matches
+- **Standings** - View current league standings across major regions
+- **Schedule** - Upcoming match schedules
+- **Results** - Past match results
+- **Team Pages** - Detailed team information
+- **Gaming Gear Reviews** - Affordable gaming equipment recommendations
+
+## 🛠️ Tech Stack
+
+- **React** - Frontend framework
+- **TypeScript** - Type safety
+- **CSS** - Styling
+- **LoLesports API** - Live esports data
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+```
+
+## 📄 License
+
+MIT License
+
+---
+
+Built with ❤️ for League of Legends fans
