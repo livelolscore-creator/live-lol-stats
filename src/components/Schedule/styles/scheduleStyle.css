@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Barlow+Condensed:wght@400;500;600&display=swap');
+
+/* Section headings */
+.games-of-day {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C8A84B;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.games-of-day::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: #C8A84B;
+    border-radius: 2px;
+}
+
+.orders-container > div { margin-bottom: 2rem; }
+
+.games-list-container { display: flex; justify-content: center; }
+
+.games-list-items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: start;
+}
+
+/* Match card */
+.live-game-card {
+    background: var(--card-color);
+    border: 1px solid #1E2A42;
+    border-radius: 6px;
+    padding: 0;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.live-game-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: #1E2A42;
+    transition: background 0.2s;
+}
+
+.live-game-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(200, 168, 75, 0.3);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(200,168,75,0.1);
+}
+
+.live-game-card:hover::before {
+    background: linear-gradient(90deg, #C8A84B, #F0CC6E, #C8A84B);
+}
+
+/* Card header stripe */
+.live-game-card > h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #7A8599;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid #1E2A42;
+}
+
+.live-game-card > h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: #4A5568;
+    padding: 0.2rem 1rem;
+    text-align: center;
+}
+
+/* Card content */
+.live-game-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+.live-game-card-content > div { padding-top: 0; }
+
+.live-game-card-content h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--title);
+    max-width: 90px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Team side */
+.live-game-card-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+.live-game-card-team-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    object-fit: contain;
+    margin: 0;
+    padding: 4px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1E2A42;
+}
+
+/* Versus column */
+.game-card-versus {
+    text-align: center;
+    flex: 0 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.game-card-versus h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #4A5568;
+    letter-spacing: 0.06em;
+}
+
+.game-card-versus span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4A5568;
+}
+
+.game-card-versus span p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--title);
+    letter-spacing: 0.04em;
+}
+
+/* Outcome badge */
+.outcome { margin-top: 2px; }
+
+.outcome p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    border-radius: 2px;
+    padding: 1px 8px;
+    width: min-content;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: white;
+}
+
+.outcome .win  { background: #27AE60; }
+.outcome .loss { background: #C0392B; }
+
+/* Live indicator on card */
+.live-game-card .inProgress-indicator {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #C0392B;
+    animation: cardPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes cardPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(192,57,43,0.5); }
+    50% { box-shadow: 0 0 0 4px rgba(192,57,43,0); }
+}
+
+/* Record text */
+.live-game-card-team span p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    color: #4A5568;
+}
+
+/* Inline ad between sections */
+.ad-banner-inline {
+    width: 100%;
+    min-height: 90px;
+    margin: 0.5rem 0 1.5rem;
+    background: rgba(200, 168, 75, 0.03);
+    border: 1px dashed rgba(200, 168, 75, 0.15);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2A3550;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}

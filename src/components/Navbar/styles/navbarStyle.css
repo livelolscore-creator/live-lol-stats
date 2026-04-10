@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Barlow+Condensed:wght@400;500&display=swap');
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    padding: 0 2rem;
+    background: var(--card-color);
+    border-bottom: 1px solid #1E2A42;
+    position: relative;
+    z-index: 100;
+}
+
+/* gold accent line at top */
+.navbar-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C8A84B 30%, #F0CC6E 50%, #C8A84B 70%, transparent);
+}
+
+/* LEFT — logo */
+.navbar-left { display: flex; align-items: center; flex: 1; }
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.navbar-logo-icon svg,
+.navbar-logo-icon img {
+    width: 128px;
+    height: 128px;
+    margin-top: 8px;
+    filter: drop-shadow(0 0 6px rgba(200, 168, 75, 0.4));
+}
+
+.navbar-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.navbar-brand-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+    color: #C8A84B;
+    text-shadow: 0 0 20px rgba(200, 168, 75, 0.3);
+}
+
+.navbar-brand-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7A8599;
+    margin-top: 1px;
+}
+
+/* CENTER — nav links */
+.navbar-center {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar-nav-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7A8599;
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.navbar-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 1px;
+    background: #C8A84B;
+    transform: scaleX(0);
+    transition: transform 0.2s;
+}
+
+.navbar-nav-link:hover { color: #C8A84B; }
+.navbar-nav-link:hover::after { transform: scaleX(1); }
+
+/* RIGHT — controls */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.navbar-live-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #C0392B;
+    border: 1px solid rgba(192, 57, 43, 0.4);
+    padding: 2px 8px;
+    border-radius: 2px;
+}
+
+.live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #C0392B;
+    animation: livePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(192,57,43,0.5); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(192,57,43,0); }
+}
+
+/* Ad banner wrapper below navbar */
+.ad-banner-top-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    background: var(--card-color);
+    border-bottom: 1px solid #1E2A42;
+}
+
+.ad-banner-top {
+    max-width: 728px;
+    width: 100%;
+    min-height: 90px;
+    background: rgba(200, 168, 75, 0.04);
+    border: 1px dashed rgba(200, 168, 75, 0.2);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2A3550;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* toggle buttons shared */
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.sound-toggle,
+.theme-toggle {
+    cursor: pointer;
+    height: 1.25rem;
+    width: 2.25rem;
+    border-radius: 50px;
+    border: 2px solid #1E2A42;
+    background-color: var(--theme-switch-bg);
+    position: relative;
+}
+
+.notch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 50%;
+    background-color: var(--theme-switch-notch);
+    transform: translate(-50%, -20%);
+    transition: all 0.3s ease;
+}
+
+.dark > .notch  { transform: translate(50%, -20%); }
+.muted > .notch { transform: translate(50%, -20%); }
+
+@media(max-width: 720px) {
+    .navbar-center { display: none; }
+    .navbar-brand-sub { display: none; }
+    .navbar-live-badge { display: none; }
+}

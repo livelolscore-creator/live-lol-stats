@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Barlow+Condensed:wght@400;500&display=swap');
+
+.footer-wrapper {
+    width: 100%;
+    background: var(--card-color);
+    border-top: 1px solid #1E2A42;
+    margin-top: 2rem;
+}
+
+/* Affiliate ad slot */
+.footer-ad-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 728px;
+    min-height: 90px;
+    margin: 1rem auto;
+    background: rgba(200, 168, 75, 0.04);
+    border: 1px dashed rgba(200, 168, 75, 0.2);
+    border-radius: 3px;
+    color: #2A3550;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-top: 1px solid #1E2A42;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo-mark svg,
+.footer-logo-mark img {
+    width: 128px;
+    height: 128px;
+}
+
+.footer-brand-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #C8A84B;
+    letter-spacing: 0.06em;
+}
+
+.footer-brand-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    color: #4A5568;
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+}
+
+.footer-contact {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    color: #7A8599;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7A8599;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-link:hover { color: #C8A84B; }
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+.footer-social-link:hover { opacity: 1; }
+
+.footer-social-link svg {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.footer-social-link svg path { fill: #C8A84B; }
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-links .footer-link {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7A8599;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links .footer-link:hover { color: #C8A84B; }
+
+.footer-links .footer-link svg {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.footer-links .footer-link svg path { fill: #7A8599; transition: fill 0.2s; }
+.footer-links .footer-link:hover svg path { fill: #C8A84B; }
+
+.footer-bottom {
+    border-top: 1px solid #1E2A42;
+    padding: 0.75rem 2rem;
+    text-align: center;
+}
+
+.footer-bottom span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: #2A3550;
+    text-transform: uppercase;
+}
+
+/* Keep adsbygoogle working */
+.adsbygoogle { display: block; }

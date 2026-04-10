@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Barlow:wght@400;500&family=Barlow+Condensed:wght@400;500;600&display=swap');
+
+/* ============================
+   MATCH HEADER
+   ============================ */
+
+.match-details-container {
+    width: 100%;
+}
+
+.live-game-stats-header-team-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem 0.75rem;
+    gap: 1rem;
+}
+
+.team-card-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.team-card-wrapper:first-child {
+    justify-content: flex-end;
+}
+
+.team-card-wrapper:last-child {
+    justify-content: flex-start;
+}
+
+.live-game-stats-header-team-images > h1 {
+    flex: 1;
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--title);
+}
+
+.live-game-stats-header-team-images > h1 > div {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.live-game-stats-header-team-images > div { flex: 1; text-align: center; }
+
+.live-game-stats-header-team-images > .blue-team {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+
+.live-game-stats-header-team-images > .red-team {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    padding-right: 1rem;
+}
+
+/* Game state pill */
+.gamestate-bg-in-game,
+.gamestate-bg-game-paused,
+.gamestate-bg-game-ended,
+.gamestate-bg-game-disabled {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: white;
+    margin: 0 auto 8px;
+    padding: 3px 12px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.gamestate-bg-in-game {
+    background: #27AE60;
+    animation: gamestatePulse 2s ease-in-out infinite;
+}
+
+.gamestate-bg-game-ended { background: #C0392B; }
+
+.gamestate-bg-game-paused {
+    background: #7A6530;
+    animation: gamestatePulsePaused 4s ease-in-out infinite;
+}
+
+.gamestate-bg-game-disabled { background: #6B48C8; }
+
+@keyframes gamestatePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(39,174,96,0.5); }
+    50% { box-shadow: 0 0 0 6px rgba(39,174,96,0); }
+}
+
+@keyframes gamestatePulsePaused {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Team images in match view */
+.match-container .live-game-card-team {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    padding-top: 24px;
+}
+
+.match-container .live-game-card-team-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    object-fit: contain;
+    padding: 4px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1E2A42;
+    margin: 4px;
+}
+
+/* ============================
+   TEAM STATS HEADER
+   ============================ */
+
+.live-game-stats-header-status {
+    margin: 0.75rem 1rem;
+    display: flex;
+}
+
+.live-game-stats-header-status > .blue-team {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 14rem;
+}
+
+.live-game-stats-header-status > .red-team {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    text-align: right;
+}
+
+.team-stats {
+    color: var(--text);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    min-width: 28px;
+}
+
+.team-stats > span { display: flex; justify-content: center; }
+
+.live-game-stats-header-status > .blue-team > .team-stats > svg > path,
+.live-game-stats-header-status > .blue-team > .team-stats > svg > g { fill: #2A6DD9; }
+
+.live-game-stats-header-status > .red-team > .team-stats > svg > path,
+.live-game-stats-header-status > .red-team > .team-stats > svg > g { fill: #C0392B; }
+
+/* Gold bar */
+.live-game-stats-header-gold {
+    margin: 0.5rem 1rem;
+    display: flex;
+    border-radius: 2px;
+    overflow: hidden;
+    height: 4px;
+}
+
+.live-game-stats-header-gold > .blue-team { background: #2A6DD9; }
+.live-game-stats-header-gold > .red-team  { background: #C0392B; }
+
+/* Team gold diff badge next to logo */
+.team-gold-diff {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.team-gold-diff-top {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.gold-diff-ahead {
+    background: rgba(200, 168, 75, 0.15);
+    color: #C8A84B;
+    border: 1px solid rgba(200, 168, 75, 0.3);
+}
+
+/* Dragons */
+.live-game-stats-header-dragons {
+    display: flex;
+    min-height: 24px;
+    padding: 0.25rem 1rem 0.75rem;
+}
+
+.live-game-stats-header-dragons > .blue-team { flex: 1; }
+.live-game-stats-header-dragons > .red-team  { text-align: right; flex: 1; }
+
+.blue-team > .dragon { margin-right: 6px; }
+.red-team  > .dragon { margin-left: 6px; }
+
+/* ============================
+   PLAYER TABLE CARD
+   ============================ */
+
+.status-live-game-card {
+    background: var(--card-color);
+    border: 1px solid #1E2A42;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.status-live-game-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #2A6DD9 0%, #C8A84B 50%, #C0392B 100%);
+}
+
+.status-live-game-card-content {
+    padding: 0 1rem 1rem;
+}
+
+.status-live-game-card-content h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #A8B2C8;
+    text-align: center;
+}
+
+/* Table wrapper */
+.status-live-game-card-table-wrapper {
+    overflow-x: auto;
+    overflow-y: clip;
+    padding-top: 300px;
+    margin-top: -300px;
+}
+
+.status-live-game-card-table { width: 100%; border-collapse: collapse; }
+
+/* Table header row */
+.table-top-row-champion,
+.table-top-row-vida,
+.table-top-row-items,
+.table-top-row,
+.table-top-row.player-stats-kda {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #A8B2C8;
+    padding: 6px 4px;
+    border-bottom: 1px solid #1E2A42;
+    white-space: nowrap;
+}
+
+.table-top-row-champion { width: 11rem; text-align: left; padding-left: 8px; }
+.table-top-row-vida     { width: 9rem; }
+.table-top-row-items    { width: 10rem; }
+
+/* Team name header inside table */
+.status-live-game-card-table thead tr:first-child th {
+    background: rgba(255,255,255,0.02);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--title);
+    padding: 8px;
+    border-bottom: 1px solid #1E2A42;
+    border-top: 1px solid #1E2A42;
+    margin-top: 0.5rem;
+}
+
+/* Player rows */
+.player-stats-row th, .player-stats-row td {
+    padding: 4px;
+    border-bottom: 1px solid rgba(30,42,66,0.5);
+    vertical-align: middle;
+}
+
+.player-stats-row th { cursor: pointer; }
+.player-stats-row:hover { background: rgba(255,255,255,0.02); }
+
+/* Champion info cell */
+.player-champion-info {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 0;
+}
+
+.player-champion-wrapper {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    position: relative;
+}
+
+img.player-champion { z-index: 2; }
+svg.player-champion { z-index: 1; position: absolute; }
+
+.player-champion {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.player-champion-info-level {
+    transform: translate(-50%, 80%);
+    font-size: 11px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    color: #C8A84B;
+    background: rgba(0,0,0,0.7);
+    border-radius: 2px;
+    padding: 0 2px;
+    z-index: 3;
+    position: relative;
+}
+
+.player-champion-info-name {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.player-champion-info-name > span:first-child {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--title);
+}
+
+.player-card-player-name {
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.65rem;
+    color: #A8B2C8;
+}
+
+/* Chevron */
+.chevron-down {
+    fill: #A8B2C8;
+    width: 22px;
+    padding: 4px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+.rotated { transform: rotate(-180deg); }
+
+/* Player stat cells */
+.player-stats,
+.footer-notes {
+    height: 26px;
+    line-height: 26px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgba(255,255,255,0.03);
+    text-align: center;
+    border-radius: 2px;
+    color: var(--text);
+    padding: 0 6px;
+}
+
+.player-stats-kda { width: 30px; }
+
+/* Gold diff */
+.player-gold-positive {
+    color: #2ECC71 !important;
+    font-weight: 600;
+}
+.player-gold-negative {
+    color: #C0392B !important;
+    font-weight: 600;
+}
+
+/* Health bar */
+.mini-health-bar { display: flex; align-items: center; }
+
+.mini-health-bar > div {
+    flex: 1;
+    border-radius: 3px;
+    min-width: 5rem;
+    background: rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+    height: 26px;
+}
+
+.mini-health-bar > div > div {
+    height: 26px;
+    border-radius: 3px;
+    transition: width 1s ease;
+    background: linear-gradient(90deg, #1D7A3D, #27AE60);
+}
+
+span.mini-current-health {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    white-space: nowrap;
+    z-index: 2;
+}
+
+/* Items */
+.player-stats-items {
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.03);
+    border-radius: 2px;
+    position: relative;
+    gap: 1px;
+}
+
+.player-stats-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-stats-item > img {
+    height: 24px;
+    border-radius: 3px;
+}
+
+.player-stats-item.empty {
+    background: rgba(255,255,255,0.02);
+    border-radius: 2px;
+    height: 24px;
+}
+
+/* Item tooltip */
+.itemDescription {
+    display: none;
+    position: absolute;
+    padding: 10px 12px;
+    text-align: left;
+    z-index: 99;
+    bottom: 130%;
+    border-radius: 4px;
+    width: 220px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    background: #0F1525;
+    border: 1px solid #1E2A42;
+    color: var(--text);
+}
+
+.itemName {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: #C8A84B;
+    margin-bottom: 4px;
+}
+
+.itemDescription > div {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    margin-bottom: 3px;
+    color: #A8B2C8;
+}
+
+.itemDescription::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #0F1525 transparent transparent transparent;
+}
+
+/* Champion stats expand row */
+.champion-stats-row span { display: none; }
+
+.champion-stats-row td {
+    background: rgba(200,168,75,0.04);
+    border-bottom: 1px solid #1E2A42;
+}
+
+.champion-stats-row div {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 3px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    color: #A8B2C8;
+}
+
+/* Footer notes / stream controls */
+.footer-notes {
+    background: rgba(255,255,255,0.03);
+    padding: 0 10px;
+    color: var(--text);
+    display: inline-block;
+    margin: 6px 6px 0 0;
+    max-width: 100%;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+}
+
+.footer-notes a { text-decoration: underline; color: #C8A84B; }
+
+.chatDiv, .streamDiv {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.chatDiv .toggle-container,
+.streamDiv .toggle-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.chat-toggle, .stream-toggle {
+    cursor: pointer;
+    height: 1.25rem;
+    width: 2.25rem;
+    border-radius: 50px;
+    border: 2px solid #1E2A42;
+    background-color: var(--theme-switch-bg);
+    position: relative;
+}
+
+/* Loading state */
+.loading-game-container {
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-game-container div {
+    text-align: center;
+    width: 100%;
+}
+
+.live-game-card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.loading-game-image { width: 15%; opacity: 0.5; }
+
+/* Toast */
+.toast-watcher { display: flex; align-items: center; gap: 0.75rem; }
+
+.toast-image {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+}
+
+/* Game selector tabs */
+.game-selector {
+    display: flex;
+    border-bottom: 1px solid #1E2A42;
+    margin-bottom: 0;
+}
+
+.game-selector-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    background: transparent;
+    border: none;
+    border-right: 1px solid #1E2A42;
+    border-bottom: 2px solid transparent;
+    flex-grow: 1;
+    flex-basis: 0;
+    color: #A8B2C8;
+    transition: all 0.2s;
+}
+
+.game-selector-item.selected {
+    background: rgba(200,168,75,0.06);
+    color: #C8A84B;
+    border-bottom: 2px solid #C8A84B;
+}
+
+.game-selector-item.unneeded {
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+@media(min-width: 520px) {
+    .game-selector-item:hover:not(.selected) {
+        color: var(--title);
+        background: rgba(255,255,255,0.02);
+    }
+}
+
+@media(max-width: 520px) { .game-selector { flex-direction: column; } }
+
+@media(max-width: 1080px) {
+    .live-game-stats-header-status > .blue-team { margin-right: 8rem; }
+}
+@media(max-width: 720px) {
+    .live-game-stats-header-status > .blue-team { margin-right: 1rem; }
+}
+@media(max-width: 420px) {
+    .live-game-stats-header-status > .blue-team,
+    .live-game-stats-header-status > .red-team {
+        flex-direction: column-reverse !important;
+        align-items: center;
+    }
+}
+
+/* Runes */
+.rune-list div { padding: 0; margin: 2px 0; }
+.rune img { max-width: 40px; max-height: 40px; border-radius: 50%; }
+.rune-list .name { vertical-align: top; margin-top: 12px; margin-left: 6px; font-size: 0.75rem; }
+.rune-list div.rune { margin-bottom: 14px; }
+.rune-list .text { display: block; }
+
+/* Outcome in match view */
+.outcome p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    border-radius: 2px;
+    padding: 1px 8px;
+    width: min-content;
+    text-align: center;
+    margin: 3px auto;
+    text-transform: uppercase;
+    color: white;
+}
+.outcome .win  { background: #27AE60; }
+.outcome .loss { background: #C0392B; }

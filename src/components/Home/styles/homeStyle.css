@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Barlow+Condensed:wght@400;500;600&display=swap');
+
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.section-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C8A84B;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: #C8A84B;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--card-color);
+    border: 1px solid #1E2A42;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.live-matches-grid {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.live-matches-grid .hero-link {
+    flex: 1;
+    display: block;
+}
+
+.live-matches-grid .hero-live,
+.live-matches-grid .hero-upcoming {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid #1E2A42;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    text-align: center;
+}
+
+.live-matches-grid .hero-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.live-matches-grid .hero-team img {
+    width: 80px;
+    height: 80px;
+}
+
+.live-matches-grid .hero-team span {
+    font-size: 1.1rem;
+}
+
+.live-matches-grid .hero-vs {
+    font-size: 1.25rem;
+}
+
+.live-matches-grid .hero-score {
+    font-size: 1.5rem;
+}
+
+.live-matches-grid .hero-timer {
+    font-size: 1rem;
+}
+
+.live-matches-grid .hero-countdown {
+    font-size: 2rem;
+    margin-top: 0.75rem;
+}
+
+.live-matches-grid .hero-league {
+    font-size: 0.9rem;
+}
+
+.live-matches-grid .hero-badge {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+}
+
+.live-matches-grid .hero-label {
+    font-size: 0.85rem;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #C8A84B 30%, #F0CC6E 50%, #C8A84B 70%, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hero-link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.hero-link .hero-live,
+.hero-link .hero-upcoming {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    width: 100%;
+}
+
+.hero-link:hover .hero-section::before {
+    opacity: 1;
+}
+
+.hero-link:hover .hero-live,
+.hero-link:hover .hero-upcoming {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(200, 168, 75, 0.4),
+        0 0 30px rgba(200, 168, 75, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.hero-link:active .hero-live,
+.hero-link:active .hero-upcoming {
+    transform: translateY(-2px) scale(1);
+}
+
+.hero-badge {
+    transition: transform 0.3s;
+}
+
+.hero-link:hover .hero-badge {
+    transform: scale(1.05);
+}
+
+.hero-link:hover .hero-watch-btn {
+    background: linear-gradient(135deg, #F0CC6E, #C8A84B);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(200, 168, 75, 0.5);
+}
+
+.hero-live {
+    width: 100%;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(192, 57, 43, 0.15);
+    border: 1px solid #C0392B;
+    color: #C0392B;
+    padding: 4px 16px;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #C0392B;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.hero-league {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: #7A8599;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.hero-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-team img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    padding: 8px;
+    border: 1px solid #1E2A42;
+}
+
+.hero-team span {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--title);
+    letter-spacing: 0.05em;
+}
+
+.hero-score {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--title);
+}
+
+.hero-score .vs {
+    color: #4A5568;
+    font-size: 1.5rem;
+}
+
+.hero-timer {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #C8A84B;
+    letter-spacing: 0.1em;
+    display: block;
+    margin: 0.5rem 0 1rem;
+}
+
+.hero-watch-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #C8A84B, #F0CC6E);
+    color: #0D1117;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.6rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-watch-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(200, 168, 75, 0.4);
+}
+
+/* Upcoming Match */
+.hero-upcoming {
+    width: 100%;
+}
+
+.hero-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #7A8599;
+    text-transform: uppercase;
+}
+
+.hero-vs {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4A5568;
+}
+
+.hero-countdown {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #C8A84B;
+    letter-spacing: 0.15em;
+    margin-top: 1rem;
+}
+
+.hero-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-empty > span:first-child {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--title);
+}
+
+.hero-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #7A8599;
+    font-size: 0.85rem;
+}
+
+/* Stats Ticker */
+.stats-ticker {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.ticker-item {
+    background: var(--card-color);
+    border: 1px solid #1E2A42;
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.ticker-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: #7A8599;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.ticker-value {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--title);
+    display: block;
+}
+
+.ticker-ahead {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    color: #27AE60;
+    text-transform: uppercase;
+}
+
+/* Meta Section */
+.meta-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.meta-column {
+    background: var(--card-color);
+    border: 1px solid #1E2A42;
+    border-radius: 6px;
+    padding: 1.25rem;
+}
+
+.meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.meta-item:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+.meta-rank {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #C8A84B;
+    width: 20px;
+}
+
+.meta-champ-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+}
+
+.meta-champ-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.meta-champ-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--title);
+    flex: 1;
+}
+
+.meta-presence {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    color: #27AE60;
+    background: rgba(39, 174, 96, 0.1);
+    padding: 2px 8px;
+    border-radius: 2px;
+}
+
+/* Power Player */
+.power-player-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    min-height: 250px;
+    justify-content: center;
+}
+
+.power-player-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #C8A84B;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.power-player-avatar .crown-icon {
+    font-size: 80px;
+    line-height: 1;
+    filter: drop-shadow(0 0 10px rgba(200, 168, 75, 0.5));
+}
+
+.power-player-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.power-player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.power-player-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--title);
+}
+
+.power-player-team {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    color: #7A8599;
+    letter-spacing: 0.1em;
+}
+
+.power-player-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 1rem;
+}
+
+.power-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.power-stat .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    color: #7A8599;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.power-stat .stat-value {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #C8A84B;
+}
+
+.power-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0D1117;
+    background: linear-gradient(135deg, #C8A84B, #F0CC6E);
+    padding: 6px 16px;
+    border-radius: 2px;
+}
+
+/* Results Section */
+.results-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.results-column, .standings-column {
+    background: var(--card-color);
+    border: 1px solid #1E2A42;
+    border-radius: 6px;
+    padding: 1.25rem;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.result-item-link {
+    text-decoration: none;
+    display: block;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.2s, border-color 0.2s;
+    border: 1px solid transparent;
+}
+
+.result-item-link:hover .result-item {
+    background: rgba(200, 168, 75, 0.05);
+    border-color: rgba(200, 168, 75, 0.2);
+    transform: translateX(4px);
+}
+
+.result-league {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: #7A8599;
+    text-transform: uppercase;
+}
+
+.result-teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.result-team {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.result-team:last-child {
+    justify-content: flex-end;
+}
+
+.result-team img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.04);
+    padding: 2px;
+}
+
+.result-team span {
+    color: var(--title);
+}
+
+.result-teams .winner {
+    color: #C8A84B;
+}
+
+.result-score {
+    color: #4A5568;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Standings Grid */
+.standings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.standing-block {
+    padding: 0.5rem;
+}
+
+.standing-league {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #C8A84B;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #1E2A42;
+}
+
+.standing-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+}
+
+.standing-pos {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #7A8599;
+    width: 16px;
+}
+
+.standing-team {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--title);
+    flex: 1;
+}
+
+.standing-record {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #7A8599;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    .stats-ticker {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .meta-section {
+        grid-template-columns: 1fr;
+    }
+    .results-section {
+        grid-template-columns: 1fr;
+    }
+}

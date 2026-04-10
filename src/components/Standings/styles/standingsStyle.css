@@ -1,0 +1,587 @@
+.standings-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+/* Header */
+.standings-header {
+    margin-bottom: 1.5rem;
+}
+
+.standings-title {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.standings-title::before {
+    content: "";
+    width: 4px;
+    height: 28px;
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold-dim));
+    border-radius: 2px;
+}
+
+/* League Tabs */
+.standings-league-tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--navy-card);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--navy-border);
+    flex-wrap: wrap;
+}
+
+.league-tab {
+    padding: 0.6rem 1.25rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.league-tab:hover:not(:disabled) {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.league-tab.active {
+    color: var(--navy);
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(200, 168, 75, 0.3);
+}
+
+.league-tab:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* League Banner */
+.standings-league-banner {
+    background: linear-gradient(135deg, var(--navy-card), var(--navy-mid));
+    border: 1px solid var(--navy-border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.league-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.league-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(200, 168, 75, 0.2), rgba(200, 168, 75, 0.05));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.league-banner-info h2 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.league-banner-info span {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+.league-banner-stats {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+}
+
+/* Status Bar */
+.standings-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 0.25rem;
+}
+
+.standings-api-status {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.75rem;
+    color: var(--green-accent);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.standings-api-status::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--green-accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.standings-updated {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+}
+
+/* Main Table Card */
+.standings-main {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Table */
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.standings-table thead {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+}
+
+.standings-table th {
+    padding: 0.5rem 0.5rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-align: left;
+    border-bottom: 1px solid var(--navy-border);
+}
+
+.standings-table th:first-child {
+    padding-left: 0.5rem;
+}
+
+.standings-table th:last-child {
+    padding-right: 0.5rem;
+}
+
+.th-rank { width: auto; }
+.th-team { width: auto; }
+.th-record { width: 90px; }
+.th-last5 { width: 150px; }
+
+/* Rank Column */
+.rank-cell {
+    text-align: center;
+    width: 40px;
+}
+
+/* Team Cell */
+.team-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rank-badge {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    color: var(--text-muted);
+}
+
+.standings-row:nth-child(1) .rank-badge {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.standings-row:nth-child(2) .rank-badge {
+    background: linear-gradient(135deg, #D0D0D0, #A0A0A0);
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(192, 192, 192, 0.3);
+}
+
+.standings-row:nth-child(3) .rank-badge {
+    background: linear-gradient(135deg, #CD7F32, #B87333);
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(205, 127, 50, 0.3);
+}
+
+.standings-row.top-4 .rank-badge {
+    background: rgba(39, 174, 96, 0.15);
+    color: var(--green-accent);
+}
+
+/* Row Styles */
+.standings-row {
+    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(30, 42, 66, 0.5);
+}
+
+.standings-row:last-child {
+    border-bottom: none;
+}
+
+.standings-row:hover {
+    background: rgba(200, 168, 75, 0.08);
+}
+
+.standings-row.top-4 {
+    background: linear-gradient(90deg, rgba(39, 174, 96, 0.08), transparent);
+}
+
+.standings-row.top-4:hover {
+    background: linear-gradient(90deg, rgba(39, 174, 96, 0.15), rgba(200, 168, 75, 0.08));
+}
+
+.team-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2px;
+}
+
+.team-name {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 24px !important;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.team-code {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 16px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+}
+
+/* Record Column */
+.record-cell {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.record-wins {
+    color: #27ae60;
+}
+
+.record-sep {
+    color: var(--text-muted);
+    margin: 0 2px;
+}
+
+.record-losses {
+    color: #e74c3c;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+/* Last 5 Column */
+.last5-cell {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.last5-box {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.last5-box.w {
+    background: rgba(39, 174, 96, 0.9);
+    color: #fff;
+    border: 1px solid rgba(39, 174, 96, 0.5);
+}
+
+.last5-box.l {
+    background: rgba(231, 76, 60, 0.9);
+    color: #fff;
+    border: 1px solid rgba(231, 76, 60, 0.5);
+}
+
+.last5-box.none {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    color: transparent;
+}
+
+/* Playoff Indicator */
+.playoff-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.15rem 0.4rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(39, 174, 96, 0.15);
+    color: var(--green-accent);
+    border-radius: 3px;
+    margin-left: 0.4rem;
+}
+
+/* Legend */
+.standings-legend {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--navy-border);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+}
+
+.legend-dot.playoffs {
+    background: rgba(39, 174, 96, 0.3);
+    border: 1px solid var(--green-accent);
+}
+
+.legend-dot.top3 {
+    background: linear-gradient(135deg, #FFD700, #CD7F32);
+}
+
+/* Loading & Error States */
+.standings-loading,
+.standings-error,
+.standings-no-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    gap: 1.25rem;
+    text-align: center;
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 12px;
+}
+
+.standings-loading {
+    color: var(--gold);
+}
+
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(200, 168, 75, 0.2);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.standings-loading p,
+.standings-no-data p {
+    font-family: "Barlow", sans-serif;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.standings-error p {
+    font-family: "Barlow", sans-serif;
+    font-size: 1rem;
+    color: var(--red-accent);
+}
+
+.retry-btn {
+    padding: 0.75rem 2rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(200, 168, 75, 0.4);
+}
+
+.no-data-hint {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .standings-league-tabs {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .league-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+    
+    .standings-league-banner {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .league-banner-left {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .league-banner-stats {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .standings-container {
+        padding: 1rem 0;
+    }
+    
+    .standings-table th,
+    .standings-table td {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .standings-table td:first-child,
+    .standings-table th:first-child {
+        padding-left: 0.5rem;
+    }
+    
+    .standings-table td:last-child,
+    .standings-table th:last-child {
+        padding-right: 0.5rem;
+    }
+    
+    .team-logo {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .team-name {
+        font-size: 0.9rem;
+    }
+    
+    .rank-badge {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+    
+    .standings-legend {
+        display: none;
+    }
+    
+    .th-last5, .last5-cell {
+        display: none;
+    }
+}

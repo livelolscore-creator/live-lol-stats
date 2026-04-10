@@ -1,0 +1,248 @@
+.league-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.league-breadcrumb {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.league-breadcrumb a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.league-breadcrumb a:hover {
+    color: var(--gold-bright);
+}
+
+.league-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--card-color);
+    border: 1px solid var(--navy-border);
+    border-radius: 12px;
+}
+
+.league-logo {
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.league-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.league-info {
+    flex: 1;
+}
+
+.league-title {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--title);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.05em;
+}
+
+.league-subtitle {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.league-loading,
+.league-error {
+    text-align: center;
+    padding: 4rem 2rem;
+    font-family: "Barlow", sans-serif;
+    color: var(--text-muted);
+}
+
+.league-error {
+    color: var(--red-accent);
+}
+
+.league-standings {
+    margin-bottom: 2rem;
+}
+
+.standings-card.full {
+    background: var(--card-color);
+    border: 1px solid var(--navy-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.standings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: rgba(200, 168, 75, 0.05);
+    border-bottom: 1px solid var(--navy-border);
+}
+
+.standings-header h3 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.last-updated {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+.standings-table {
+    padding: 0.5rem 1rem;
+}
+
+.standings-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px 80px;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.standings-row:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.standings-row.header {
+    border-bottom: 1px solid var(--navy-border);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.standings-row.header:hover {
+    background: transparent;
+}
+
+.col-rank {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.col-team {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--title);
+}
+
+.col-team img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px;
+}
+
+.col-record {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.col-winrate {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--green-positive);
+    text-align: right;
+}
+
+.league-no-data {
+    text-align: center;
+    padding: 3rem;
+    background: var(--card-color);
+    border: 1px solid var(--navy-border);
+    border-radius: 12px;
+    color: var(--text-muted);
+    font-family: "Barlow", sans-serif;
+}
+
+.league-description {
+    background: var(--card-color);
+    border: 1px solid var(--navy-border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.league-description h2 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.league-description p {
+    font-family: "Barlow", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+    .league-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .league-logo {
+        width: 150px;
+        height: 75px;
+    }
+
+    .league-title {
+        font-size: 1.5rem;
+    }
+
+    .standings-row {
+        grid-template-columns: 50px 1fr 80px;
+    }
+
+    .col-winrate {
+        display: none;
+    }
+
+    .standings-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
