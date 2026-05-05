@@ -470,9 +470,34 @@
 }
 
 .power-player-avatar .crown-icon {
-    font-size: 80px;
-    line-height: 1;
+    width: 80px;
+    height: 60px;
+    margin: 0 auto;
+    position: relative;
     filter: drop-shadow(0 0 10px rgba(200, 168, 75, 0.5));
+}
+
+.power-player-avatar .crown-icon::before,
+.power-player-avatar .crown-icon::after {
+    content: '';
+    position: absolute;
+    background: #C8A84B;
+}
+
+.power-player-avatar .crown-icon::before {
+    width: 100%;
+    height: 40px;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0% 100%, 15% 0%, 30% 100%, 50% 0%, 70% 100%, 85% 0%, 100% 100%);
+}
+
+.power-player-avatar .crown-icon::after {
+    width: 60%;
+    height: 20px;
+    bottom: 0;
+    left: 20%;
+    border-radius: 0 0 4px 4px;
 }
 
 .power-player-avatar img {
@@ -764,6 +789,10 @@
     .power-player-avatar {
         width: 80px;
         height: 80px;
+    }
+    .power-player-avatar .crown-icon {
+        width: 50px;
+        height: 38px;
     }
     .section-title {
         font-size: 0.75rem;

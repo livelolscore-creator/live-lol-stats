@@ -309,7 +309,7 @@ export function Home() {
                     <h2 className="section-title">Play of the Day</h2>
                     <div className="power-player-card">
                         <div className="power-player-avatar">
-                            <span className="crown-icon">👑</span>
+                            <div className="crown-icon"></div>
                         </div>
                         <div className="power-player-info">
                             <span className="power-player-name">Winner</span>
