@@ -590,6 +590,9 @@
         width: 20px;
         height: 20px;
         font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .record-cell {
