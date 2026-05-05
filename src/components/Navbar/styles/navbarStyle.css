@@ -41,7 +41,7 @@
 }
 
     .navbar-logo-text {
-        margin-left: -15px;
+        margin-left: 0;
     }
 
 .navbar-brand-name {
@@ -215,5 +215,8 @@
         padding: 0.5rem;
         font-size: 0.85rem;
         white-space: nowrap;
+    }
+    .navbar-logo-text {
+        margin-left: -15px;
     }
 }
