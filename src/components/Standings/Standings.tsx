@@ -414,16 +414,6 @@ export function Standings() {
                                                     <span className="record-sep"> - </span>
                                                     <span className="record-losses">{team.record?.losses || 0}</span>
                                                 </div>
-                                                <div className="last5-mobile">
-                                                    {[0, 1, 2, 3, 4].map(i => (
-                                                        <span 
-                                                            key={i} 
-                                                            className={`last5-box ${last5[i] ? last5[i].toLowerCase() : 'none'}`}
-                                                        >
-                                                            {last5[i] || ''}
-                                                        </span>
-                                                    ))}
-                                                </div>
                                             </td>
                                             <td className="last5-cell">
                                                 {[0, 1, 2, 3, 4].map(i => (
