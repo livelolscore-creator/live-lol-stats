@@ -15,6 +15,8 @@ import {Team} from "./components/Team/Team";
 import {Navbar} from "./components/Navbar/Navbar";
 import { useTheme } from './theme/ThemeContext'
 import React from "react";
+// @ts-ignore - Using direct import due to webpack 4 limitations in CRA
+const { Analytics } = require('@vercel/analytics/dist/react/index.js');
 
 function App() {
     const { theme } = useTheme();
@@ -40,6 +42,7 @@ function App() {
                 </div>
                 <Footer/>
             </div>
+            <Analytics />
         </HashRouter>
     );
 }
