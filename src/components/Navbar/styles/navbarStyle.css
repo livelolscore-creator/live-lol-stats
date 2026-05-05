@@ -23,7 +23,7 @@
 }
 
 /* LEFT — logo */
-.navbar-left { display: flex; align-items: center; flex: 1; }
+.navbar-left { display: flex; align-items: center; flex: 1; margin-left: -10px; }
 
 .navbar-logo {
     display: flex;
