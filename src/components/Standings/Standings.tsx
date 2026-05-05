@@ -368,6 +368,7 @@ export function Standings() {
                     </div>
 
                     <div className="standings-main">
+                        <div className="standings-table-wrapper">
                         <table className="standings-table">
                             <thead>
                                 <tr>
@@ -428,6 +429,7 @@ export function Standings() {
                                 })}
                             </tbody>
                         </table>
+                        </div>
                         <div className="standings-legend">
                             <div className="legend-item">
                                 <span className="legend-dot top3"></span>

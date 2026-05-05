@@ -546,6 +546,16 @@
     .standings-container {
         padding: 1rem 0;
     }
+
+    .standings-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+    
+    .standings-table {
+        min-width: 600px;
+    }
     
     .standings-table th,
     .standings-table td {
