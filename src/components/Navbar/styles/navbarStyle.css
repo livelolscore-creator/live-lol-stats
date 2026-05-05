@@ -40,11 +40,9 @@
     filter: drop-shadow(0 0 6px rgba(200, 168, 75, 0.4));
 }
 
-.navbar-logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
+    .navbar-logo-text {
+        margin-left: -12px;
+    }
 
 .navbar-brand-name {
     font-family: 'Rajdhani', sans-serif;
