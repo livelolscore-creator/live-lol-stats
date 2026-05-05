@@ -47,9 +47,6 @@ export function Navbar() {
                         <span className="live-dot"/>
                         LIVE
                     </div>
-               
-                </div>
-                    <SoundToggler />
                 </div>
             </nav>
 
