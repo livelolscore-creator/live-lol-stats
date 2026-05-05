@@ -214,8 +214,8 @@
     }
     .navbar-brand-name { font-size: 0.9rem; }
     .navbar-nav-link {
-        padding: 0.4rem;
-        font-size: 0.7rem;
+        padding: 0.5rem;
+        font-size: 0.85rem;
         white-space: nowrap;
     }
 }
