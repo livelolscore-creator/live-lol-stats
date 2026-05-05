@@ -582,23 +582,6 @@
         align-items: center;
         gap: 2px;
     }
-    
-    .last5-mobile { 
-        display: none; 
-    }
-}
-
-@media(max-width: 768px) {
-    .last5-mobile { 
-        display: flex; 
-        gap: 2px;
-        margin-top: 4px;
-    }
-    .record-cell {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-    }
 }
 
 @media(max-width: 768px) {
