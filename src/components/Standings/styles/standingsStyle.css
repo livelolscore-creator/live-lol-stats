@@ -582,9 +582,10 @@
         align-items: center;
         gap: 2px;
     }
-    .last5-mobile { 
-        display: none; 
-    }
+}
+
+.last5-mobile { 
+    display: none; 
 }
 
 @media(max-width: 768px) {
