@@ -577,14 +577,14 @@
         display: table-cell;
     }
     
-    .last5-mobile { 
-        display: none; 
-    }
-    
     .record-row {
         display: flex;
         align-items: center;
         gap: 2px;
+    }
+    
+    .last5-mobile { 
+        display: none; 
     }
 }
 
