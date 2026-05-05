@@ -202,6 +202,7 @@
         flex: 1;
         padding: 0 0.5rem;
         justify-content: center;
+        overflow: hidden;
     }
     .navbar-brand-sub { display: none; }
     .navbar-live-badge { display: none; }
