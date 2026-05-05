@@ -574,10 +574,7 @@
     .th-last5 { display: none; }
     
     .record-cell {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+        display: table-cell;
     }
     
     .record-row {
@@ -618,8 +615,6 @@
     
     .last5-cell {
         gap: 2px;
-        display: flex;
-        align-items: center;
     }
     
     .last5-box {
