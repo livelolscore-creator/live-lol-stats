@@ -227,8 +227,6 @@
 .th-team { width: auto; }
 .th-record { width: 90px; }
 .th-last5 { width: 150px; }
-
-.last5-mobile { display: none; }
   
 /* Rank Column */
 .rank-cell {
@@ -574,7 +572,6 @@
     .th-team { width: 40%; }
     .th-record { width: 50%; }
     .th-last5 { display: none; }
-    .last5-cell { display: none; }
     
     .record-cell {
         display: flex;
@@ -587,11 +584,6 @@
     .record-row {
         display: flex;
         align-items: center;
-        gap: 2px;
-    }
-    
-    .last5-mobile {
-        display: flex;
         gap: 2px;
     }
     
@@ -640,12 +632,5 @@
     
     .standings-legend {
         display: none;
-    }
-    
-    .last5-mobile { 
-        display: flex; 
-    }
-    .last5-cell { 
-        display: none; 
     }
 }
