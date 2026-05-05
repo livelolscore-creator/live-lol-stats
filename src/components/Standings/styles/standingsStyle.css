@@ -571,14 +571,14 @@
     .th-rank { width: 10%; }
     .th-team { width: 40%; }
     .th-record { width: 20%; }
-    .th-last5 { width: 30%; display: table-cell; }
+    .th-last5 { width: 30%; }
     
     .record-cell {
         display: table-cell;
     }
     
-    .last5-cell {
-        display: table-cell;
+    .last5-mobile { 
+        display: none; 
     }
     
     .record-row {
@@ -586,6 +586,22 @@
         align-items: center;
         gap: 2px;
     }
+}
+
+@media(max-width: 768px) {
+    .th-last5 { display: none; }
+    .last5-cell { display: none; }
+    .last5-mobile { 
+        display: flex; 
+        gap: 2px;
+        margin-top: 4px;
+    }
+    .record-cell {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+}
     
     .team-logo {
         width: 20px;
