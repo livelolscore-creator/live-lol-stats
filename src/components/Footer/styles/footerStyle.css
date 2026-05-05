@@ -153,3 +153,60 @@
 
 /* Keep adsbygoogle working */
 .adsbygoogle { display: block; }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .footer-logo-mark svg,
+    .footer-logo-mark img {
+        height: 80px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-contact {
+        align-items: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 1rem 0.75rem;
+    }
+
+    .footer-logo-mark svg,
+    .footer-logo-mark img {
+        height: 60px;
+    }
+
+    .footer-brand-name {
+        font-size: 0.95rem;
+    }
+
+    .footer-links {
+        gap: 0.75rem;
+    }
+
+    .footer-link {
+        font-size: 0.7rem;
+    }
+}

@@ -1,10 +1,13 @@
 import './styles/navbarStyle.css'
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeToggler } from "./ThemeToggler";
 import { SoundToggler } from "./SoundToggler";
 import logoImg from "../../assets/images/logo.png";
 
 export function Navbar() {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
     return (
         <>
             <nav className="navbar-container">
@@ -20,14 +23,24 @@ export function Navbar() {
                     </Link>
                 </div>
 
-                <div className="navbar-center">
-                    <Link className="navbar-nav-link" to="/">Home</Link>
-                    <Link className="navbar-nav-link" to="/matches/">Matches</Link>
-                    <Link className="navbar-nav-link" to="/results/">Results</Link>
-                    <Link className="navbar-nav-link" to="/standings/">Standings</Link>
-                    <Link className="navbar-nav-link" to="/news/">News</Link>
-                    <Link className="navbar-nav-link" to="/gear/">Gaming Gear</Link>
-                    <a className="navbar-nav-link" href="https://lolesports.com" target="_blank" rel="noreferrer">LoL Esports</a>
+                <button
+                    className="navbar-hamburger"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div className={`navbar-center ${mobileMenuOpen ? 'open' : ''}`}>
+                    <Link className="navbar-nav-link" to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                    <Link className="navbar-nav-link" to="/matches/" onClick={() => setMobileMenuOpen(false)}>Matches</Link>
+                    <Link className="navbar-nav-link" to="/results/" onClick={() => setMobileMenuOpen(false)}>Results</Link>
+                    <Link className="navbar-nav-link" to="/standings/" onClick={() => setMobileMenuOpen(false)}>Standings</Link>
+                    <Link className="navbar-nav-link" to="/news/" onClick={() => setMobileMenuOpen(false)}>News</Link>
+                    <Link className="navbar-nav-link" to="/gear/" onClick={() => setMobileMenuOpen(false)}>Gaming Gear</Link>
+                    <a className="navbar-nav-link" href="https://lolesports.com" target="_blank" rel="noreferrer" onClick={() => setMobileMenuOpen(false)}>LoL Esports</a>
                 </div>
 
                 <div className="navbar-right">
@@ -36,7 +49,6 @@ export function Navbar() {
                         LIVE
                     </div>
                     <SoundToggler />
-              
                 </div>
             </nav>
 

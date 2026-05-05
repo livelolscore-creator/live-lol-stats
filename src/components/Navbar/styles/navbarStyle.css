@@ -198,7 +198,22 @@
         height: 80px;
         padding: 0 1rem;
     }
-    .navbar-center { display: none; }
+    .navbar-center {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--card-color);
+        border-bottom: 1px solid #1E2A42;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+        z-index: 99;
+    }
+    .navbar-center.open {
+        display: flex;
+    }
     .navbar-brand-sub { display: none; }
     .navbar-live-badge { display: none; }
     .navbar-logo-icon svg,
@@ -206,4 +221,37 @@
         height: 50px;
     }
     .navbar-brand-name { font-size: 1rem; }
+
+    .navbar-hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+    }
+    .navbar-hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #C8A84B;
+        transition: all 0.3s;
+    }
+    .navbar-hamburger:hover span {
+        background: #F0CC6E;
+    }
+    .navbar-nav-link {
+        padding: 0.75rem 1rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 4px;
+    }
+    .navbar-nav-link:hover {
+        background: rgba(200, 168, 75, 0.1);
+    }
+}
+
+.navbar-hamburger {
+    display: none;
 }
