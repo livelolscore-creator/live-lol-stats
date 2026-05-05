@@ -201,7 +201,7 @@
         gap: 0.5rem;
         flex: 1;
         padding: 0 0.5rem;
-        justify-content: center;
+        justify-content: flex-start;
         overflow: hidden;
     }
     .navbar-brand-sub { display: none; }
