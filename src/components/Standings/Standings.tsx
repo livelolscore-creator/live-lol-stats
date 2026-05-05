@@ -425,6 +425,16 @@ export function Standings() {
                                                     ))}
                                                 </div>
                                             </td>
+                                            <td className="last5-cell">
+                                                {[0, 1, 2, 3, 4].map(i => (
+                                                    <span 
+                                                        key={i} 
+                                                        className={`last5-box ${last5[i] ? last5[i].toLowerCase() : 'none'}`}
+                                                    >
+                                                        {last5[i] || ''}
+                                                    </span>
+                                                ))}
+                                            </td>
                                         </tr>
                                     );
                                 })}

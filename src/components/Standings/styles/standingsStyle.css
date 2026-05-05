@@ -229,7 +229,7 @@
 .th-last5 { width: 150px; }
 
 .last5-mobile { display: none; }
- 
+  
 /* Rank Column */
 .rank-cell {
     text-align: center;
@@ -638,5 +638,12 @@
     
     .standings-legend {
         display: none;
+    }
+    
+    .last5-mobile { 
+        display: flex; 
+    }
+    .last5-cell { 
+        display: none; 
     }
 }
