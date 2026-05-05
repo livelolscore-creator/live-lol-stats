@@ -2,7 +2,6 @@ import './styles/navbarStyle.css'
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeToggler } from "./ThemeToggler";
-import { SoundToggler } from "./SoundToggler";
 import logoImg from "../../assets/images/logo.png";
 
 export function Navbar() {
@@ -48,6 +47,8 @@ export function Navbar() {
                         <span className="live-dot"/>
                         LIVE
                     </div>
+               
+                </div>
                     <SoundToggler />
                 </div>
             </nav>
