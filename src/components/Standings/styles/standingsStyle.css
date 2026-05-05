@@ -586,6 +586,10 @@
         align-items: center;
         gap: 2px;
     }
+    
+    .last5-mobile { 
+        display: none; 
+    }
 }
 
 @media(max-width: 768px) {
@@ -600,53 +604,5 @@
         display: flex;
         flex-direction: column;
         gap: 2px;
-    }
-}
-    
-    .team-logo {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .team-name {
-        font-size: 0.75rem;
-    }
-    
-    .team-code {
-        font-size: 0.65rem;
-    }
-    
-    .rank-badge {
-        width: 20px;
-        height: 20px;
-        font-size: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .record-cell {
-        font-size: 0.75rem;
-    }
-    
-    .record-sep {
-        margin: 0 1px;
-    }
-    
-    .last5-cell {
-        gap: 2px;
-    }
-    
-    .last5-box {
-        width: 16px;
-        height: 16px;
-        font-size: 0.55rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .standings-legend {
-        display: none;
     }
 }
