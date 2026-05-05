@@ -1,4 +1,4 @@
-.standings-container {
+﻿.standings-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 1.5rem 1rem;
@@ -586,7 +586,6 @@
         align-items: center;
         gap: 2px;
     }
-}
 }
 
 @media(max-width: 768px) {
