@@ -544,8 +544,76 @@
 
 @media (max-width: 768px) {
     .standings-container {
-        padding: 1rem 0.5rem;
+        padding: 0.5rem 0.25rem;
     }
+    
+    .standings-table {
+        width: 100%;
+        font-size: 0.75rem;
+        table-layout: fixed;
+    }
+    
+    .standings-table th,
+    .standings-table td {
+        padding: 0.4rem 0.15rem;
+    }
+    
+    .standings-table td:first-child,
+    .standings-table th:first-child {
+        padding-left: 0.15rem;
+    }
+    
+    .standings-table td:last-child,
+    .standings-table th:last-child {
+        padding-right: 0.15rem;
+    }
+    
+    .th-rank { width: 10%; }
+    .th-team { width: 40%; }
+    .th-record { width: 20%; }
+    .th-last5 { width: 30%; }
+    
+    .team-logo {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .team-name {
+        font-size: 0.75rem;
+    }
+    
+    .team-code {
+        font-size: 0.65rem;
+    }
+    
+    .rank-badge {
+        width: 20px;
+        height: 20px;
+        font-size: 0.75rem;
+    }
+    
+    .record-cell {
+        font-size: 0.75rem;
+    }
+    
+    .record-sep {
+        margin: 0 1px;
+    }
+    
+    .last5-cell {
+        gap: 2px;
+    }
+    
+    .last5-box {
+        width: 14px;
+        height: 14px;
+        font-size: 0;
+    }
+    
+    .standings-legend {
+        display: none;
+    }
+}
     
     .standings-table {
         width: 100%;
