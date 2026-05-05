@@ -195,29 +195,32 @@
 
 @media(max-width: 720px) {
     .navbar-container {
-        height: auto;
-        min-height: 80px;
-        flex-wrap: wrap;
-        padding: 0.5rem 1rem;
+        height: 80px;
+        padding: 0 0.5rem;
     }
     .navbar-center {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-        width: 100%;
-        order: 3;
-        padding: 0.5rem 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: 0.25rem;
+        flex: 1;
+        padding: 0 0.5rem;
+    }
+    .navbar-center::-webkit-scrollbar {
+        display: none;
     }
     .navbar-brand-sub { display: none; }
     .navbar-live-badge { display: none; }
     .navbar-logo-icon svg,
     .navbar-logo-icon img {
-        height: 50px;
+        height: 40px;
     }
-    .navbar-brand-name { font-size: 1rem; }
+    .navbar-brand-name { font-size: 0.9rem; }
     .navbar-nav-link {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.85rem;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
     }
 }
