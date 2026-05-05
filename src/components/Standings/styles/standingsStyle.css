@@ -608,9 +608,12 @@
     }
     
     .last5-box {
-        width: 14px;
-        height: 14px;
-        font-size: 0;
+        width: 16px;
+        height: 16px;
+        font-size: 0.55rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .standings-legend {
