@@ -82,7 +82,7 @@ const LEAGUE_ICONS: Record<string, string> = {
     lcp: "PH",
 };
 
-const START_DATE = "2026-03-15";
+const START_DATE = "2026-03-21";
 
 export function Standings() {
     const [selectedLeague, setSelectedLeague] = useState<string>("lck");
