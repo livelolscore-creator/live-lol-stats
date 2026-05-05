@@ -210,7 +210,7 @@
     .hide-mobile { display: none; }
     .navbar-logo-icon svg,
     .navbar-logo-icon img {
-        height: 60px;
+        height: 80px;
     }
     .navbar-brand-name { font-size: 0.9rem; }
     .navbar-nav-link {
