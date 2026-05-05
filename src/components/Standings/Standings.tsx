@@ -27,7 +27,7 @@ interface LeagueData {
 }
 
 const LEAGUES = [
-    { id: "lck", name: "LCK", shortName: "LCK", fullName: "League of Legends Champions Korea" },
+    { id: "lck", name: "LCK", shortName: "LCK", fullName: "League of Legends Championship Korea", leagueId: "98767991310872058" },
     { id: "lec", name: "LEC", shortName: "LEC", fullName: "League of Legends European Championship" },
     { id: "lcs", name: "LCS", shortName: "LCS", fullName: "League Championship Series" },
     { id: "lpl", name: "LPL", shortName: "LPL", fullName: "League of Legends Pro League" },
@@ -147,7 +147,11 @@ export function Standings() {
                 );
                 
                 const startDate = new Date(START_DATE);
-                const recentEvents = sortedEvents.filter(e => new Date(e.startTime) >= startDate);
+                const now = new Date();
+                const recentEvents = sortedEvents.filter(e => {
+                    const eventDate = new Date(e.startTime);
+                    return eventDate >= startDate && eventDate <= now;
+                });
                 
                 const teamMatchHistory: Record<string, Record<string, {outcome: 'W' | 'L', startTime: Date}[]>> = {};
                 
