@@ -45,8 +45,8 @@
 
 .footer-logo-mark svg,
 .footer-logo-mark img {
-    width: 128px;
-    height: 128px;
+    width: auto;
+    height: 140px;
 }
 
 .footer-brand-name {
