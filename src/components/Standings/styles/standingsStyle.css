@@ -618,6 +618,8 @@
     
     .last5-cell {
         gap: 2px;
+        display: flex;
+        align-items: center;
     }
     
     .last5-box {
