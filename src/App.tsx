@@ -15,6 +15,7 @@ import {Team} from "./components/Team/Team";
 import {Navbar} from "./components/Navbar/Navbar";
 import { useTheme } from './theme/ThemeContext'
 import React from "react";
+import { Analytics } from '@vercel/analytics/dist/react';
 
 function App() {
     const { theme } = useTheme();
@@ -39,6 +40,7 @@ function App() {
                     </Switch>
                 </div>
                 <Footer/>
+                <Analytics />
             </div>
         </HashRouter>
     );
