@@ -312,17 +312,17 @@ export function Home() {
                             <span className="crown-icon">👑</span>
                         </div>
                         <div className="power-player-info">
-                            <span className="power-player-name">ShowMaker</span>
-                            <span className="power-player-team">Position - MID</span>
+                            <span className="power-player-name">Painter</span>
+                            <span className="power-player-team">Position - JNG</span>
                         </div>
                         <div className="power-player-stats">
                             <span className="power-stat">
                                 <span className="stat-label">Pick</span>
-                                <span className="stat-value">Over 6.5 Kills</span>
+                                <span className="stat-value">Under 8.5 Kills</span>
                             </span>
                             <span className="power-stat">
                                 <span className="stat-label">Match</span>
-                                <span className="stat-value">DK VS KT</span>
+                                <span className="stat-value">T1.EA VS GGA</span>
                             </span>
                         </div>
                         <span className="power-badge">Play of the Day</span>
