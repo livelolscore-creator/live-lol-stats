@@ -318,11 +318,11 @@ export function Home() {
                         <div className="power-player-stats">
                             <span className="power-stat">
                                 <span className="stat-label">Pick</span>
-                                <span className="stat-value">Under 8.5 Kills</span>
+                                <span className="stat-value">Over 7 Kills</span>
                             </span>
                             <span className="power-stat">
                                 <span className="stat-label">Match</span>
-                                <span className="stat-value">T1.EA VS GGA</span>
+                                <span className="stat-value">T1.EA VS DNS.C</span>
                             </span>
                         </div>
                         <span className="power-badge">Play of the Day</span>
