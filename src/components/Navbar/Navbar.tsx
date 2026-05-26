@@ -23,6 +23,7 @@ export function Navbar() {
                     <Link className="navbar-nav-link hide-mobile" to="/">Home</Link>
                     <Link className="navbar-nav-link" to="/matches/">Matches</Link>
                     <Link className="navbar-nav-link" to="/results/">Results</Link>
+                    <Link className="navbar-nav-link hide-mobile" to="/standings/">Standings</Link>
                     <a className="navbar-nav-link" href="https://discord.gg/M3z9GAddUm" target="_blank" rel="noreferrer">Discord</a>
                     <Link className="navbar-nav-link hide-mobile" to="/news/">News</Link>
                     <Link className="navbar-nav-link hide-mobile" to="/gear/">Gaming Gear</Link>
