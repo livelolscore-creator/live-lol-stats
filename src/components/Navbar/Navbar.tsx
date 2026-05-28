@@ -19,7 +19,7 @@ export function Navbar() {
                 </div>
 
                 <div className="navbar-center">
-                    <Link className="navbar-nav-link hide-mobile" to="/">Home</Link>
+                    <Link className="navbar-nav-link hide-mobile" to="/" style={{paddingLeft:'1.5rem'}}>Home</Link>
                     <Link className="navbar-nav-link" to="/matches/">Matches</Link>
                     <Link className="navbar-nav-link" to="/results/">Results</Link>
                     <Link className="navbar-nav-link hide-mobile" to="/standings/">Standings</Link>
