@@ -14,7 +14,6 @@ export function Navbar() {
                         </div>
                         <div className="navbar-logo-text">
                             <span className="navbar-brand-name">LiveLoLScore</span>
-                            <span className="navbar-brand-sub">Live Esports</span>
                         </div>
                     </Link>
                 </div>
